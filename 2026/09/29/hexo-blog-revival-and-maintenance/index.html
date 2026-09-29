@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo 博客重新启用：修复记录与更新维护指南 | lz133&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这个博客已经很久没有更新，这次重新整理本地 Hexo 工程、恢复构建与发布流程，并把后续的维护方式记录下来，方便以后直接照着操作。 这次修复了什么本次检查和调整包括：  保留现有 Hexo 源文件、主题和文章，不重建站点。 将 _config.yml 中的站点地址从示例地址改为正式地址 https:&#x2F;&#x2F;lz133.github.io。 修正 keywords 配置的 YAML 写法。 补齐 Hex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客重新启用：修复记录与更新维护指南">
+<meta property="og:url" content="https://lz133.github.io/2026/09/29/hexo-blog-revival-and-maintenance/index.html">
+<meta property="og:site_name" content="lz133&#39;s blog">
+<meta property="og:description" content="这个博客已经很久没有更新，这次重新整理本地 Hexo 工程、恢复构建与发布流程，并把后续的维护方式记录下来，方便以后直接照着操作。 这次修复了什么本次检查和调整包括：  保留现有 Hexo 源文件、主题和文章，不重建站点。 将 _config.yml 中的站点地址从示例地址改为正式地址 https:&#x2F;&#x2F;lz133.github.io。 修正 keywords 配置的 YAML 写法。 补齐 Hex">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-09-29T02:23:08.000Z">
+<meta property="article:modified_time" content="2026-09-29T02:23:28.944Z">
+<meta property="article:author" content="lz133">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="维护记录">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="lz133's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lz133&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">tech&#39;s blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lz133.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hexo-blog-revival-and-maintenance" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/09/29/hexo-blog-revival-and-maintenance/" class="article-date">
+  <time class="dt-published" datetime="2026-09-29T02:23:08.000Z" itemprop="datePublished">2026-09-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4/">博客维护</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Hexo 博客重新启用：修复记录与更新维护指南
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这个博客已经很久没有更新，这次重新整理本地 Hexo 工程、恢复构建与发布流程，并把后续的维护方式记录下来，方便以后直接照着操作。</p>
+<h2 id="这次修复了什么"><a href="#这次修复了什么" class="headerlink" title="这次修复了什么"></a>这次修复了什么</h2><p>本次检查和调整包括：</p>
+<ol>
+<li>保留现有 Hexo 源文件、主题和文章，不重建站点。</li>
+<li>将 <code>_config.yml</code> 中的站点地址从示例地址改为正式地址 <code>https://lz133.github.io</code>。</li>
+<li>修正 <code>keywords</code> 配置的 YAML 写法。</li>
+<li>补齐 Hexo 的 Git 部署插件，使 <code>hexo deploy</code> 可以将生成后的静态站点发布到 <code>main</code> 分支。</li>
+<li>执行一次正式构建，确认文章可以正常生成。</li>
+<li>增加这篇维护记录，作为以后继续写作和排障的入口。</li>
+</ol>
+<p>本站目前使用 Hexo 8、Node.js 20 和 pnpm 10。博客部署地址是：</p>
+<ul>
+<li>网站：<a href="https://lz133.github.io/">https://lz133.github.io/</a></li>
+<li>部署仓库：<a target="_blank" rel="noopener" href="https://github.com/lz133/lz133.github.io">https://github.com/lz133/lz133.github.io</a></li>
+</ul>
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><p>首次恢复项目或拉取源码后，先安装依赖：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+
+<p>启动本地预览服务：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm server</span><br></pre></td></tr></table></figure>
+
+<p>浏览器访问 <code>http://localhost:4000</code>。预览时可以直接检查文章排版、链接和图片是否正常。</p>
+<h2 id="发布新文章"><a href="#发布新文章" class="headerlink" title="发布新文章"></a>发布新文章</h2><p>创建文章：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm exec hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>文章会生成在 <code>source/_posts</code> 目录。编辑完成后，先清理并重新生成静态文件：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pnpm run clean</span><br><span class="line">pnpm run build</span><br></pre></td></tr></table></figure>
+
+<p>最后发布到 GitHub Pages：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm run deploy</span><br></pre></td></tr></table></figure>
+
+<p><code>pnpm run deploy</code> 会把 <code>public</code> 中生成的静态文件提交到 <code>lz133/lz133.github.io</code> 仓库的 <code>main</code> 分支。发布完成后，等待 GitHub Pages 更新，再打开 <a href="https://lz133.github.io/">https://lz133.github.io/</a> 检查结果。</p>
+<h2 id="日常维护流程"><a href="#日常维护流程" class="headerlink" title="日常维护流程"></a>日常维护流程</h2><p>以后更新博客时，可以固定使用下面的流程：</p>
+<ol>
+<li>先执行 <code>pnpm install</code>，确保本地依赖完整。</li>
+<li>使用 <code>pnpm exec hexo new &quot;文章标题&quot;</code> 新建文章。</li>
+<li>使用 Markdown 编写内容，需要图片时把图片放在 <code>source</code> 下的稳定目录中引用。</li>
+<li>使用 <code>pnpm server</code> 本地预览。</li>
+<li>使用 <code>pnpm run clean</code> 和 <code>pnpm run build</code> 检查构建结果。</li>
+<li>使用 <code>pnpm run deploy</code> 发布，然后检查线上页面。</li>
+<li>定期执行 <code>pnpm outdated</code> 查看依赖更新，并用 Git 保存 Hexo 源文件。</li>
+</ol>
+<h2 id="发布与备份注意事项"><a href="#发布与备份注意事项" class="headerlink" title="发布与备份注意事项"></a>发布与备份注意事项</h2><ul>
+<li>GitHub 登录凭据应由 Git Credential Manager 或系统凭据管理器保存，不要把个人访问令牌直接写进 <code>_config.yml</code>。</li>
+<li>不要提交 <code>node_modules</code>、<code>public</code>、<code>db.json</code> 和 Hexo 临时部署目录，这些内容已经由 <code>.gitignore</code> 排除。</li>
+<li>建议另外建立一个源码仓库保存 Hexo 工程，这样即使本地目录丢失，也可以恢复文章、配置和结构。</li>
+<li>GitHub Pages 的发布源需要与部署方式保持一致。当前方案直接由本机将静态文件推送到 <code>lz133.github.io</code> 的 <code>main</code> 分支，不要再同时用另一套自动部署覆盖同一分支。</li>
+<li>发布前至少检查首页、文章详情、归档、分类、标签和移动端布局。</li>
+</ul>
+<h2 id="本次结论"><a href="#本次结论" class="headerlink" title="本次结论"></a>本次结论</h2><p>博客没有损坏，主要问题是本地工程长期未维护、配置仍保留示例值，并且缺少 Git 部署插件。完成这些修正后，写作、构建和发布流程已经恢复。后续只需要按照“新建文章、本地预览、构建、部署、线上检查”的顺序维护即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lz133.github.io/2026/09/29/hexo-blog-revival-and-maintenance/" data-id="cuid6VJHIIEQn85TRaa0ABh0C" data-title="Hexo 博客重新启用：修复记录与更新维护指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" rel="tag">维护记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/08/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BB%B4%E6%8A%A4/">博客维护</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" rel="tag">维护记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub-Pages/" style="font-size: 10px;">GitHub Pages</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/%E7%BB%B4%E6%8A%A4%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">维护记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/09/">九月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">八月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/09/29/hexo-blog-revival-and-maintenance/">Hexo 博客重新启用：修复记录与更新维护指南</a>
+          </li>
+        
+          <li>
+            <a href="/2026/08/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 lz133<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
